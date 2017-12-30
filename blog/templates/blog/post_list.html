@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Post list</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div>
+            <p>published :{{ post.published_date }}</p>
+            <h1><a href="">{{ post }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
 
-    <h2>Site is under construction!</h2>
+        </div>
+    {% endfor %}
 
-
-    <p>Tee man is working</p>
-</body>
-</html>
+{% endblock %}
